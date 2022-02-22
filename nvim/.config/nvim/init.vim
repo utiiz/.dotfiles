@@ -13,6 +13,12 @@ noremap n j
 noremap e k
 noremap a l
 
+nnoremap <C-N> <C-W><C-J>
+nnoremap <C-E> <C-W><C-K>
+nnoremap <C-A> <C-W><C-L>
+nnoremap <C-P> <C-W><C-H>
+nnoremap <C-V> <C-W><C-V>
+nnoremap <C-H> <C-W><C-S>
 
 " --- Plugins
 
