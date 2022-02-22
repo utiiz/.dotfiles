@@ -3,6 +3,8 @@ set relativenumber
 set rnu
 set tabstop=4 
 
+" --- Remapping keys to better fit ISRT Keyboard layout
+
 noremap z u
 
 noremap p h
