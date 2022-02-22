@@ -9,6 +9,7 @@ nix-env -iA \
 	nixpkgs.git \
 	nixpkgs.neovim \
 	nixpkgs.fish \
+	nixpkgs.ripgrep \
 	nixpkgs.stow \
 	nixpkgs.tmux \
 	nixpkgs.bat
