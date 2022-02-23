@@ -9,11 +9,17 @@ set tabstop=4
 " --- Remapping keys to better fit ISRT Keyboard layout
 
 noremap z u
+noremap u p
 
 noremap p h
 noremap n j
 noremap e k
 noremap a l
+
+nnoremap E :m .+1<CR>==
+nnoremap N :m .-2<CR>==
+vnoremap E :m '>+1<CR>gv=gv
+vnoremap N :m '<-2<CR>gv=gv
 
 nnoremap <C-N> <C-W><C-J>
 nnoremap <C-E> <C-W><C-K>
@@ -33,11 +39,15 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'kyazdani42/nvim-tree.lua'
 
 call plug#end()
 
 set background=dark
 colorscheme moonlight
+lua vim.opt.cul = true
+highlight CursorLineNR term=bold cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
 
 if (has("nvim"))
   "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
@@ -79,4 +89,6 @@ nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
+nnoremap <leader>pp <cmd>NvimTreeToggle<cr>
 lua require('utiiz.telescope')
+lua require('utiiz.nvim-tree')
