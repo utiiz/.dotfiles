@@ -10,6 +10,7 @@ set tabstop=4
 
 noremap z u
 noremap u p
+noremap q a 
 
 noremap p h
 noremap n j
