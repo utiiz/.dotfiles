@@ -8,6 +8,7 @@ fenv source ~/.nix-profile/etc/profile.d/nix.sh
 alias ll 'ls -lart'
 alias v 'nvim'
 alias vim 'nvim'
+alias py 'python3'
 
 # Fish syntax highlighting
 set -g fish_color_autosuggestion '555'  'brblack'
@@ -33,3 +34,5 @@ set -g fish_color_user brgreen
 set -g fish_color_valid_path --underline
 
 starship init fish | source
+
+nvm use v17.6.0 > /dev/null

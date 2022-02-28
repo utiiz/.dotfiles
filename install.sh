@@ -1,4 +1,5 @@
 ### Install Nix
+
 sh <(curl -L https://nixos.org/nix/install) --no-daemon
 
 ### Then source it
@@ -32,3 +33,5 @@ stow git
 stow fish
 stow nvim
 stow starship
+
+curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
