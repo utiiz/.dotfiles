@@ -25,10 +25,10 @@ noremap n j
 noremap e k
 noremap a l
 
-nnoremap E :m .+1<CR>==
-nnoremap N :m .-2<CR>==
-vnoremap E :m '>+1<CR>gv=gv
-vnoremap N :m '<-2<CR>gv=gv
+nnoremap N :m .+1<CR>==
+nnoremap E :m .-2<CR>==
+vnoremap N :m '>+1<CR>gv=gv
+vnoremap E :m '<-2<CR>gv=gv
 
 nnoremap <C-N> <C-W><C-J>
 nnoremap <C-E> <C-W><C-K>
@@ -36,6 +36,8 @@ nnoremap <C-A> <C-W><C-L>
 nnoremap <C-P> <C-W><C-H>
 nnoremap <C-V> <C-W><C-V>
 nnoremap <C-H> <C-W><C-S>
+nnoremap <leader>ca <C-W>o
+nnoremap <leader>cc <C-W>q
 
 imap gg <Esc>
 
