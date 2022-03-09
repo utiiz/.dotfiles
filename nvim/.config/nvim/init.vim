@@ -1,4 +1,4 @@
-let mapleader = "," " map leader to comma
+let mapleader = " " " map leader to comma
 
 syntax enable
 
@@ -55,6 +55,9 @@ nnoremap <leader>cc <C-W>q
 nnoremap <leader>tn :tabnext<CR>
 nnoremap <leader>tp :tabprev<CR>
 
+nnoremap <leader>/ :Commentary<CR>
+vnoremap <leader>/ :Commentary<CR>
+
 imap gg <Esc>
 
 " --- Plugins
@@ -87,6 +90,13 @@ Plug 'L3MON4D3/LuaSnip'
 Plug 'saadparwaiz1/cmp_luasnip'
 
 Plug 'mattn/emmet-vim'
+
+Plug 'tpope/vim-commentary'
+
+Plug 'mhinz/vim-signify'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
+Plug 'junegunn/gv.vim'
 
 call plug#end()
 
@@ -139,6 +149,16 @@ nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 nnoremap <leader>pp <cmd>NvimTreeToggle<cr>
+
+" Change these if you want
+let g:signify_sign_add               = '+'
+let g:signify_sign_delete            = '_'
+let g:signify_sign_delete_first_line = '‾'
+let g:signify_sign_change            = '~'
+
+" I find the numbers disctracting
+let g:signify_sign_show_count = 0
+let g:signify_sign_show_text = 1
 
 lua require('utiiz.telescope')
 lua require('utiiz.nvim-tree')
