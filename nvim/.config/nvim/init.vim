@@ -6,24 +6,38 @@ set noerrorbells
 set number
 set relativenumber
 set rnu
-set tabstop=4 softtabstop=4
+set tabstop=4 
+set softtabstop=4
 set shiftwidth=4
 set expandtab
 set smartindent
 set nowrap
+set ignorecase
 set smartcase
 set noswapfile
+set splitbelow splitright
+set formatoptions-=cro
+set undofile
+set hidden
+
+set scrolloff=8
+set sidescrolloff=8
+set clipboard=unnamedplus " -- Use Linux system clipboard
 
 " --- Remapping keys to better fit ISRT Keyboard layout
 
 noremap z u
 noremap u p
+noremap U P
 noremap q a
 
 noremap p h
 noremap n j
 noremap e k
 noremap a l
+
+noremap { }
+noremap } {
 
 nnoremap N :m .+1<CR>==
 nnoremap E :m .-2<CR>==
@@ -38,6 +52,8 @@ nnoremap <C-V> <C-W><C-V>
 nnoremap <C-H> <C-W><C-S>
 nnoremap <leader>ca <C-W>o
 nnoremap <leader>cc <C-W>q
+nnoremap <leader>tn :tabnext<CR>
+nnoremap <leader>tp :tabprev<CR>
 
 imap gg <Esc>
 
@@ -45,9 +61,12 @@ imap gg <Esc>
 call plug#begin('~/.config/nvim/plugged')
 
 Plug 'Brettm12345/moonlight.vim'
+Plug 'arcticicestudio/nord-vim'
+Plug 'embark-theme/vim', { 'as': 'embark', 'branch': 'main' }
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+" Plug 'nvim-lualine/lualine.nvim'
 
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
@@ -67,10 +86,13 @@ Plug 'hrsh7th/cmp-path'
 Plug 'L3MON4D3/LuaSnip'
 Plug 'saadparwaiz1/cmp_luasnip'
 
+Plug 'mattn/emmet-vim'
+
 call plug#end()
 
 set background=dark
-colorscheme moonlight
+" colorscheme moonlight
+colorscheme embark
 lua vim.opt.cul = true
 highlight CursorLineNR term=bold cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
 
@@ -87,20 +109,22 @@ if (has("termguicolors"))
 endif
 
 
+
+" enable powerline fonts
+let g:airline_powerline_fonts = 1
+let g:airline_left_sep = "\uE0B0"
+let g:airline_right_sep = ''
+
 " enable tabline
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = ''
+let g:airline#extensions#tabline#left_sep = "\uE0B0"
 let g:airline#extensions#tabline#left_alt_sep = ''
 let g:airline#extensions#tabline#right_sep = ''
 let g:airline#extensions#tabline#right_alt_sep = ''
 
-" enable powerline fonts
-let g:airline_powerline_fonts = 1
-let g:airline_left_sep = ''
-let g:airline_right_sep = ''
-
 " Switch to your current theme
-let g:airline_theme = 'onedark'
+let g:airline_theme = 'embark'
+let g:embark_terminal_italics = 1
 
 " Always show tabs
 set showtabline=2
@@ -119,3 +143,4 @@ nnoremap <leader>pp <cmd>NvimTreeToggle<cr>
 lua require('utiiz.telescope')
 lua require('utiiz.nvim-tree')
 lua require('utiiz.lsp')
+" lua require('utiiz.lualine')
