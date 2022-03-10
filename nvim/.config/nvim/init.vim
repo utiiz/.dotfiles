@@ -160,6 +160,11 @@ let g:signify_sign_change            = '~'
 let g:signify_sign_show_count = 0
 let g:signify_sign_show_text = 1
 
+" If you like colors instead
+highlight SignifySignAdd                  ctermbg=green  guifg=#62D196
+highlight SignifySignDelete ctermfg=black ctermbg=red    guifg=#F02E6E
+highlight SignifySignChange ctermfg=black ctermbg=yellow guifg=#F2B482
+
 lua require('utiiz.telescope')
 lua require('utiiz.nvim-tree')
 lua require('utiiz.lsp')
