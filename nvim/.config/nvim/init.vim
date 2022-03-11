@@ -14,11 +14,20 @@ set smartindent
 set nowrap
 set ignorecase
 set smartcase
+set incsearch
 set noswapfile
 set splitbelow splitright
 set formatoptions-=cro
 set undofile
 set hidden
+set nohlsearch
+set signcolumn=yes
+
+" Always show tabs
+set showtabline=2
+
+" We don't need to see things like -- INSERT -- anymore
+set noshowmode
 
 set scrolloff=8
 set sidescrolloff=8
@@ -98,6 +107,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'junegunn/gv.vim'
 
+Plug 'ThePrimeagen/harpoon'
+
 call plug#end()
 
 set background=dark
@@ -126,21 +137,21 @@ let g:airline_left_sep = "\uE0B0"
 let g:airline_right_sep = ''
 
 " enable tabline
-let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled = 0
 let g:airline#extensions#tabline#left_sep = "\uE0B0"
 let g:airline#extensions#tabline#left_alt_sep = ''
 let g:airline#extensions#tabline#right_sep = ''
 let g:airline#extensions#tabline#right_alt_sep = ''
 
+" remove the filetype part
+let g:airline_section_x=''
+" remove separators for empty sections
+let g:airline_skip_empty_sections = 1
+
 " Switch to your current theme
 let g:airline_theme = 'embark'
 let g:embark_terminal_italics = 1
 
-" Always show tabs
-set showtabline=2
-
-" We don't need to see things like -- INSERT -- anymore
-set noshowmode
 
 " Find files using Telescope command-line sugar.
 nnoremap <leader>ff <cmd>Telescope find_files hidden=true<cr>
@@ -149,6 +160,12 @@ nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 nnoremap <leader>pp <cmd>NvimTreeToggle<cr>
+
+nnoremap <leader>hn <cmd>lua require("harpoon.ui").nav_next()<cr>
+nnoremap <leader>he <cmd>lua require("harpoon.ui").nav_prev()<cr>
+nnoremap <leader>hh <cmd>lua require("harpoon.ui").toggle_quick_menu()<cr>
+nnoremap <leader>ha <cmd>lua require("harpoon.mark").add_file()<cr>
+
 
 " Change these if you want
 let g:signify_sign_add               = '+'
@@ -169,3 +186,4 @@ lua require('utiiz.telescope')
 lua require('utiiz.nvim-tree')
 lua require('utiiz.lsp')
 " lua require('utiiz.lualine')
+" lua require('utiiz.harpoon')
