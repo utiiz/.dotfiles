@@ -9,6 +9,9 @@ alias ll 'ls -lart'
 alias v 'nvim'
 alias vim 'nvim'
 alias py 'python3'
+alias neo 'neofetch'
+alias dot 'v ~/.dotfiles/'
+alias conf 'v ~/.config/'
 
 # Fish syntax highlighting
 set -g fish_color_autosuggestion '555'  'brblack'

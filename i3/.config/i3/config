@@ -146,6 +146,10 @@ bindsym $mod+Shift+s move container to workspace number $ws2
 # bindsym $mod+Shift+ccedilla move container to workspace number $ws9
 # bindsym $mod+Shift+agrave move container to workspace number $ws10
 
+# assign [class="Alacritty"] $ws2
+
+exec --no-startup-id picom
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -190,7 +194,7 @@ for_window [class=".*"] border pixel 3
 for_window [class=".*"] title_format " %title"
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #4c7899 #285577 #ffffff #2e9ef4   #285577
+client.focused          #FAE3B0 #285577 #ffffff #2e9ef4   #FAE3B0
 client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
 client.unfocused        #333333 #222222 #888888 #292d2e   #222222
 client.urgent           #2f343a #900000 #ffffff #900000   #900000

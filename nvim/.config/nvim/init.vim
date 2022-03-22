@@ -75,10 +75,10 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'Brettm12345/moonlight.vim'
 Plug 'arcticicestudio/nord-vim'
 Plug 'embark-theme/vim', { 'as': 'embark', 'branch': 'main' }
-
+Plug 'catppuccin/nvim', {'as': 'catppuccin'}
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-" Plug 'nvim-lualine/lualine.nvim'
+Plug 'nvim-lualine/lualine.nvim'
 
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
@@ -109,11 +109,13 @@ Plug 'junegunn/gv.vim'
 
 Plug 'ThePrimeagen/harpoon'
 
+Plug 'ap/vim-css-color'
+
 call plug#end()
 
 set background=dark
 " colorscheme moonlight
-colorscheme embark
+colorscheme catppuccin
 lua vim.opt.cul = true
 highlight CursorLineNR term=bold cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
 
@@ -185,5 +187,6 @@ highlight SignifySignChange ctermfg=black ctermbg=yellow guifg=#F2B482
 lua require('utiiz.telescope')
 lua require('utiiz.nvim-tree')
 lua require('utiiz.lsp')
+lua require('utiiz.catppuccin')
 " lua require('utiiz.lualine')
 " lua require('utiiz.harpoon')
