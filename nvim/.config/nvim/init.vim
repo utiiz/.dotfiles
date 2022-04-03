@@ -39,6 +39,7 @@ noremap z u
 noremap u p
 noremap U P
 noremap q a
+noremap Q A
 
 noremap p h
 noremap n j
@@ -57,15 +58,16 @@ nnoremap <C-N> <C-W><C-J>
 nnoremap <C-E> <C-W><C-K>
 nnoremap <C-A> <C-W><C-L>
 nnoremap <C-P> <C-W><C-H>
-nnoremap <C-V> <C-W><C-V>
+nnoremap <C-B> <C-W><C-V>
 nnoremap <C-H> <C-W><C-S>
 nnoremap <leader>ca <C-W>o
 nnoremap <leader>cc <C-W>q
+nnoremap <C-Q> <C-W>q
 nnoremap <leader>tn :tabnext<CR>
 nnoremap <leader>tp :tabprev<CR>
 
-nnoremap <leader>/ :Commentary<CR>
-vnoremap <leader>/ :Commentary<CR>
+nnoremap <C-_> :Commentary<CR>
+vnoremap <C-_> :Commentary<CR>
 
 imap gg <Esc>
 
@@ -76,8 +78,8 @@ Plug 'Brettm12345/moonlight.vim'
 Plug 'arcticicestudio/nord-vim'
 Plug 'embark-theme/vim', { 'as': 'embark', 'branch': 'main' }
 Plug 'catppuccin/nvim', {'as': 'catppuccin'}
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+" Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
 Plug 'nvim-lualine/lualine.nvim'
 
 Plug 'nvim-lua/popup.nvim'
@@ -101,6 +103,7 @@ Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'mattn/emmet-vim'
 
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
 
 Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
@@ -110,8 +113,20 @@ Plug 'junegunn/gv.vim'
 Plug 'ThePrimeagen/harpoon'
 
 Plug 'ap/vim-css-color'
+Plug 'mattn/emmet-vim'
+Plug 'turbio/bracey.vim'
+
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 call plug#end()
+
+"For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
+"Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
+" < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
+set termguicolors
 
 set background=dark
 " colorscheme moonlight
@@ -124,39 +139,30 @@ if (has("nvim"))
   let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 endif
 
-"For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
-"Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
-" < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
-if (has("termguicolors"))
-  set termguicolors
-endif
-
-
-
 " enable powerline fonts
-let g:airline_powerline_fonts = 1
-let g:airline_left_sep = "\uE0B0"
-let g:airline_right_sep = ''
+" let g:airline_powerline_fonts = 1
+" let g:airline_left_sep = "\uE0B0"
+" let g:airline_right_sep = ''
 
-" enable tabline
-let g:airline#extensions#tabline#enabled = 0
-let g:airline#extensions#tabline#left_sep = "\uE0B0"
-let g:airline#extensions#tabline#left_alt_sep = ''
-let g:airline#extensions#tabline#right_sep = ''
-let g:airline#extensions#tabline#right_alt_sep = ''
+" " enable tabline
+" let g:airline#extensions#tabline#enabled = 0
+" let g:airline#extensions#tabline#left_sep = "\uE0B0"
+" let g:airline#extensions#tabline#left_alt_sep = ''
+" let g:airline#extensions#tabline#right_sep = ''
+" let g:airline#extensions#tabline#right_alt_sep = ''
 
-" remove the filetype part
-let g:airline_section_x=''
-" remove separators for empty sections
-let g:airline_skip_empty_sections = 1
+" " remove the filetype part
+" let g:airline_section_x=''
+" " remove separators for empty sections
+" let g:airline_skip_empty_sections = 1
 
-" Switch to your current theme
-let g:airline_theme = 'embark'
-let g:embark_terminal_italics = 1
+" " Switch to your current theme
+" let g:airline_theme = 'embark'
+" let g:embark_terminal_italics = 1
 
 
 " Find files using Telescope command-line sugar.
-nnoremap <leader>ff <cmd>Telescope find_files hidden=true<cr>
+nnoremap <C-f> <cmd>Telescope find_files hidden=true<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
@@ -188,5 +194,5 @@ lua require('utiiz.telescope')
 lua require('utiiz.nvim-tree')
 lua require('utiiz.lsp')
 lua require('utiiz.catppuccin')
-" lua require('utiiz.lualine')
+lua require('utiiz.lualine')
 " lua require('utiiz.harpoon')
