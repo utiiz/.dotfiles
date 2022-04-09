@@ -1,5 +1,4 @@
 set fish_greeting
-
 set fish_function_path $fish_function_path ~/plugin-foreign-env/functions
 
 fenv source ~/.nix-profile/etc/profile.d/nix.sh
@@ -12,7 +11,7 @@ alias py 'python3'
 alias neo 'neofetch'
 alias dot 'v ~/.dotfiles/'
 alias conf 'v ~/.config/'
-alias lab 'cd ~/Documents/lab'
+alias lab 'cd /mnt/c/Users/500001293/lab'
 
 # Fish syntax highlighting
 # set -g fish_color_autosuggestion '555'  'brblack'
@@ -40,3 +39,4 @@ alias lab 'cd ~/Documents/lab'
 starship init fish | source
 
 # nvm use v17.6.0 > /dev/null
+nvm use --silent default

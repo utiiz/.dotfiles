@@ -1,0 +1,17 @@
+[character]
+success_symbol = "[](bold green)"
+error_symbol = "[](bold red)"
+
+[directory]
+truncation_length = 1
+
+[package]
+style = "red bold"
+symbol = "🚀 "
+
+[git_branch]
+symbol = "  "
+style = "purple bold"
+
+[git_status]
+style = "purple bold"
