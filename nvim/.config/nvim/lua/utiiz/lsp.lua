@@ -11,7 +11,7 @@ local on_attach = function(client, bufnr)
     vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>dn', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
 end
 
-local servers = { 'pyright', 'tsserver' }
+local servers = { 'pyright', 'tsserver', 'gopls' }
 for _, lsp in pairs(servers) do
   require('lspconfig')[lsp].setup {
       capabilities = capabilities,

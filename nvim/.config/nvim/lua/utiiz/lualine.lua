@@ -1,6 +1,7 @@
 require('lualine').setup {
   options = {
     theme = "catppuccin",
+    globalstatus = true
 	-- ... the rest of your lualine config
   },
   sections = {

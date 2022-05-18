@@ -5,13 +5,14 @@ fenv source ~/.nix-profile/etc/profile.d/nix.sh
 
 # aliases
 alias ll 'ls -lart'
-alias v 'nvim'
-alias vim 'nvim'
+alias v '/usr/bin/nvim'
+alias vim '/usr/bin/nvim'
 alias py 'python3'
 alias neo 'neofetch'
 alias dot 'v ~/.dotfiles/'
 alias conf 'v ~/.config/'
-alias lab 'cd /mnt/c/Users/500001293/lab'
+alias lab 'cd /mnt/c/Users/Tanguy/Lab'
+alias zmk 'v /mnt/c/Users/Tanguy/Lab/zmk'
 
 # Fish syntax highlighting
 # set -g fish_color_autosuggestion '555'  'brblack'
@@ -35,6 +36,9 @@ alias lab 'cd /mnt/c/Users/500001293/lab'
 # set -g fish_color_selection 'white'  '--bold'  '--background=brblack'
 # set -g fish_color_user brgreen
 # set -g fish_color_valid_path --underline
+
+set -x GOPATH ~/go
+set -x GO111MODULE on
 
 starship init fish | source
 

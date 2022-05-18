@@ -2,13 +2,14 @@ let mapleader = " " " map leader to comma
 
 syntax enable
 
+set laststatus=3
 set noerrorbells
 set number
 set relativenumber
 set rnu
-set tabstop=2 
-set softtabstop=2
-set shiftwidth=2
+set tabstop=4 
+set softtabstop=4
+set shiftwidth=4
 set expandtab
 set smartindent
 set nowrap
@@ -74,6 +75,8 @@ imap gg <Esc>
 " --- Plugins
 call plug#begin('~/.config/nvim/plugged')
 
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
 Plug 'Brettm12345/moonlight.vim'
 Plug 'arcticicestudio/nord-vim'
 Plug 'embark-theme/vim', { 'as': 'embark', 'branch': 'main' }
@@ -119,7 +122,23 @@ Plug 'turbio/bracey.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 
+" Go
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
+
+" (Optional) Multi-entry selection UI.
+Plug 'junegunn/fzf'
+Plug 'dense-analysis/ale'
+
+" JSX
+Plug 'pangloss/vim-javascript'
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+Plug 'jparise/vim-graphql'
 
 call plug#end()
 
@@ -184,6 +203,21 @@ let g:signify_sign_change            = '~'
 " I find the numbers disctracting
 let g:signify_sign_show_count = 0
 let g:signify_sign_show_text = 1
+
+" Go config
+let g:go_defmode='gopls'
+let g:go_info_mode='gopls'
+
+" Launch gopls when Go files are in use
+let g:LanguageClient_serverCommands = {
+       \ 'go': ['gopls']
+       \ }
+" Run gofmt on save
+" autocmd BufWritePre *.go :call LanguageClient#textDocument_formatting_sync()
+
+let g:ale_linters = {
+  \ 'go': ['gopls'],
+  \}
 
 " If you like colors instead
 highlight SignifySignAdd                  ctermbg=green  guifg=#62D196
