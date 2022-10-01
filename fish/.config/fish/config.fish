@@ -1,17 +1,17 @@
 set fish_greeting
 set fish_function_path $fish_function_path ~/plugin-foreign-env/functions
 
-fenv source ~/.nix-profile/etc/profile.d/nix.sh
+# fenv source ~/.nix-profile/etc/profile.d/nix.sh
 
 # aliases
 alias ll 'ls -lart'
-alias v '/usr/bin/nvim'
-alias vim '/usr/bin/nvim'
+alias v 'nvim'
+alias vim 'nvim'
 alias py 'python3'
 alias neo 'neofetch'
-alias dot 'v ~/.dotfiles/'
-alias conf 'v ~/.config/'
-alias lab 'cd /mnt/c/Users/Tanguy/Lab'
+alias dot 'nvim ~/.dotfiles/'
+alias conf 'nvim ~/.config/'
+alias lab 'cd /Users/utiiz/lab'
 alias zmk 'v /mnt/c/Users/Tanguy/Lab/zmk'
 
 # Fish syntax highlighting
@@ -43,4 +43,4 @@ set -x GO111MODULE on
 starship init fish | source
 
 # nvm use v17.6.0 > /dev/null
-nvm use --silent default
+# nvm use --silent default

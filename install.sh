@@ -1,6 +1,6 @@
 ### Install Nix
-
-sh <(curl -L https://nixos.org/nix/install) --no-daemon
+# --no-daemon
+sh <(curl -L https://nixos.org/nix/install)
 
 ### Then source it
 . ~/.nix-profile/etc/profile.d/nix.sh
@@ -33,5 +33,7 @@ stow git
 stow fish
 stow nvim
 stow starship
+
+touch ~/.hushlogin
 
 curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
