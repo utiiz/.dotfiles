@@ -6,6 +6,9 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
+
+  -- Status line
+  use 'nvim-lualine/lualine.nvim'
   
   -- Colorscheme
   use { "catppuccin/nvim", as = "catppuccin" }

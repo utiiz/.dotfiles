@@ -99,6 +99,11 @@ _G.packer_plugins = {
     path = "/Users/utiiz/.local/share/nvim/site/pack/packer/start/dartlang-snippets",
     url = "https://github.com/natebosch/dartlang-snippets"
   },
+  ["lualine.nvim"] = {
+    loaded = true,
+    path = "/Users/utiiz/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+    url = "https://github.com/nvim-lualine/lualine.nvim"
+  },
   ["nvim-treesitter"] = {
     loaded = true,
     path = "/Users/utiiz/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
