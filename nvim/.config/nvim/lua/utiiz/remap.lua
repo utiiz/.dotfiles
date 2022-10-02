@@ -23,6 +23,9 @@ nmap("gr", "<Plug>(coc-references)", {silent = true})
 
 nmap("rn", "<Plug>(coc-rename)", {silent = true})
 
+-- Use K to show the documentation in preview window
+nnoremap("K", ":call CocActionAsync(\'doHover\')<CR>", {silent = true})
+
 -- Search
 nnoremap("<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
 
