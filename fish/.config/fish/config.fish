@@ -43,4 +43,4 @@ set -x GO111MODULE on
 starship init fish | source
 
 # nvm use v17.6.0 > /dev/null
-# nvm use --silent default
+nvm use --silent default
