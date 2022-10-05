@@ -13,9 +13,13 @@ return require('packer').startup(function(use)
   -- Colorscheme
   use { "catppuccin/nvim", as = "catppuccin" }
   use ('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+  use ('nvim-treesitter/nvim-treesitter-context')
 
   --File and folder management
+  use("nvim-lua/plenary.nvim")
+  use("nvim-lua/popup.nvim")
   use('nvim-telescope/telescope.nvim')
+  use("ThePrimeagen/harpoon")
 
   -- Snippets
   use 'SirVer/ultisnips'

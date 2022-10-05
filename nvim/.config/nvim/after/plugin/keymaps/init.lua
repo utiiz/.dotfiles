@@ -13,8 +13,8 @@ inoremap("<CR>", 'pumvisible() ? "\\<C-y>" : "\\<C-g>u\\<CR>"', {expr = true})
 inoremap("<TAB>", 'pumvisible() ? "\\<C-n>" : "\\<TAB>"', {expr = true})
 inoremap("<S-TAB>", 'pumvisible() ? "\\<C-p>" : "\\<S-TAB>"', {expr = true})
 
-xmap("<leader>a", "<Plug>(coc-codeaction-selected)<CR>")
-nmap("<leader>a", "<Plug>(coc-codeaction-selected)<CR>")
+xmap("<leader><cr>", "<Plug>(coc-codeaction-selected)<CR>")
+nmap("<leader><cr>", "<Plug>(coc-codeaction-selected)<CR>")
 
 nmap("gd", "<Plug>(coc-definition)", {silent = true})
 nmap("gy", "<Plug>(coc-type-definition)", {silent = true})
@@ -32,3 +32,13 @@ nnoremap("<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
 -- Greatest remap ever
 -- To replace with u for ISRT Layout
 xnoremap("p", "\"_dP")
+
+-- Center and jump by page
+nnoremap("<C-j>", "<C-d>zz")
+nnoremap("<C-k>", "<C-u>zz")
+
+-- Telescope
+nnoremap("<C-p>", ":Telescope<CR>")
+nnoremap("<C-p>", function()
+    require('telescope.builtin').find_files()
+end)

@@ -15,4 +15,4 @@ symbol = "  "
 style = "#a6e3a1 bold"
 
 [git_status]
-style = "purple bold"
+style = "#a6e3a1 bold"
