@@ -25,3 +25,5 @@ vim.g.mapleader = " "
 vim.g.UltiSnipsExpandTrigger = "<Nop>"
 vim.g.coc_snippet_next = "<TAB>"
 vim.g.coc_snippet_prev = "<S-TAB>"
+
+vim.g.netrw_bufsettings = "noma nomod nu nowrap ro nobl"

@@ -36,6 +36,8 @@ xnoremap("p", "\"_dP")
 -- Center and jump by page
 nnoremap("<C-j>", "<C-d>zz")
 nnoremap("<C-k>", "<C-u>zz")
+nnoremap("<C-d>", "<C-d>zz")
+nnoremap("<C-u>", "<C-u>zz")
 
 -- Telescope
 nnoremap("<C-p>", ":Telescope<CR>")
