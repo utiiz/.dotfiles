@@ -13,6 +13,7 @@ alias dot 'nvim ~/.dotfiles/'
 alias conf 'nvim ~/.config/'
 alias lab 'cd ~/lab/'
 alias zmk 'v /mnt/c/Users/Tanguy/Lab/zmk'
+alias etc 'nvim ~/.dotfiles/tmux/.tmux.conf'
 
 # Fish syntax highlighting
 # set -g fish_color_autosuggestion '555'  'brblack'
