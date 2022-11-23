@@ -9,8 +9,11 @@ return require('packer').startup(function(use)
 
   -- Status line
   use 'nvim-lualine/lualine.nvim'
-  
-  -- Colorscheme
+
+  -- Git
+  use 'mhinz/vim-signify'
+ 
+  -- colorscheme
   use { "catppuccin/nvim", as = "catppuccin" }
   use ('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
   use ('nvim-treesitter/nvim-treesitter-context')
@@ -36,3 +39,4 @@ return require('packer').startup(function(use)
   -- Dart
   use 'dart-lang/dart-vim-plugin'
 end)
+
