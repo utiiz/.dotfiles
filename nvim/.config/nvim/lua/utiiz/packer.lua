@@ -25,9 +25,9 @@ return require('packer').startup(function(use)
   use("ThePrimeagen/harpoon")
 
   -- Snippets
-  use 'SirVer/ultisnips'
-  use 'honza/vim-snippets'
-  use 'natebosch/dartlang-snippets'
+  -- use 'SirVer/ultisnips'
+  -- use 'honza/vim-snippets'
+  -- use 'natebosch/dartlang-snippets'
 
   -- Utils
   use 'tpope/vim-surround'
