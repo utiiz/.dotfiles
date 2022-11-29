@@ -2,7 +2,7 @@
 
 <details>
     <summary>Vim/TMUX Cheat Sheet</summary>
-### Vim Cheat Sheet
+    ### Vim Cheat Sheet
 </details>
 
 # Install NVM on fish
