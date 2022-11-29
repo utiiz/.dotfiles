@@ -1,12 +1,5 @@
 # .dotfiles
 
-<details>
-    <summary>Vim/TMUX Cheat Sheet</summary>
-
-    # Vim Cheat Sheet
-    This is a test
-</details>
-
 # Install NVM on fish
 ```
 fisher add edc/bass
