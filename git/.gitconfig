@@ -1,0 +1,11 @@
+[core]
+        autocrlf = false
+[credential]
+        helper = store
+[alias]
+        cm = commit -m
+        alias = ! git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\ =\\ /
+        todo = ! git grep --extended-regexp -I --line-number --break --heading --color=auto 'TODO|FIXME'
+        todo-list = ! git grep --extended-regexp -I --line-number --count 'TODO|FIXME'
+        st = status
+        d = diff
