@@ -3,7 +3,8 @@
 <details>
     <summary>Vim/TMUX Cheat Sheet</summary>
 
-    ### Vim Cheat Sheet
+    # Vim Cheat Sheet
+    This is a test
 </details>
 
 # Install NVM on fish
