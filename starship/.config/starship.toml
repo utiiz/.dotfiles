@@ -1,5 +1,5 @@
 [character]
-success_symbol = "[](bold #a6e3a1)"
+success_symbol = "[](bold #a6e3a1)"
 error_symbol = "[](bold #F02E6E)"
 
 [directory]
