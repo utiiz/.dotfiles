@@ -36,4 +36,7 @@ stow starship
 
 touch ~/.hushlogin
 
+# NVM
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash
+
 curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher

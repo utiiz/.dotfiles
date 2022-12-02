@@ -3,7 +3,7 @@ set fish_function_path $fish_function_path ~/plugin-foreign-env/functions
 
 # aliases
 alias ll 'ls -lart'
-alias nvim '~/bin/nvim/bin/nvim'
+alias nvim '~/.nix-profile/bin/nvim'
 alias v 'nvim'
 alias vim 'nvim'
 alias py 'python3'
