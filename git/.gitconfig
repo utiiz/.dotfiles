@@ -9,3 +9,6 @@
         todo-list = ! git grep --extended-regexp -I --line-number --count 'TODO|FIXME'
         st = status
         d = diff
+[user]
+	email = t.kervran29@gmail.com
+	name = Tanguy Kervran
