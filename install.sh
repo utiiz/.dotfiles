@@ -13,6 +13,7 @@ nix-env -iA \
 	nixpkgs.ripgrep \
 	nixpkgs.stow \
 	nixpkgs.tmux \
+	nixpkgs.exa \
 	nixpkgs.bat
 
 git clone https://github.com/oh-my-fish/plugin-foreign-env.git ~/plugin-foreign-env

@@ -2,8 +2,11 @@ set fish_greeting
 set fish_function_path $fish_function_path ~/plugin-foreign-env/functions
 
 # aliases
-alias ll 'ls -lart'
+alias ll '~/.nix-profile/bin/exa --long --header --git --all'
+alias nix-env '~/.nix-profile/bin/nix-env'
+alias stow '~/.nix-profile/bin/stow'
 alias nvim '~/.nix-profile/bin/nvim'
+alias z '~/.nix-profile/bin/z'
 alias v 'nvim'
 alias vim 'nvim'
 alias py 'python3'
