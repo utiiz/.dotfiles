@@ -3,6 +3,7 @@ vim.opt.guicursor = ""
 vim.opt.laststatus = 3
 
 vim.opt.errorbells = false
+vim.opt.autoread = true
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
@@ -20,7 +21,7 @@ vim.opt.scrolloff = 8
 vim.opt.sidescrolloff = 8
 
 vim.opt.smartindent = true
-vim.opt.wrap = flase
+vim.opt.wrap = false
 
 vim.g.mapleader = " "
 

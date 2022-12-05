@@ -12,7 +12,7 @@ return require('packer').startup(function(use)
 
   -- Git
   use 'mhinz/vim-signify'
- 
+
   -- colorscheme
   use { "catppuccin/nvim", as = "catppuccin" }
   use ('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
@@ -20,14 +20,14 @@ return require('packer').startup(function(use)
 
   --File and folder management
   use("nvim-lua/plenary.nvim")
-  use("nvim-lua/popup.nvim")
-  use('nvim-telescope/telescope.nvim')
+  -- use("nvim-lua/popup.nvim")
+  -- use('nvim-telescope/telescope.nvim')
   use("ThePrimeagen/harpoon")
 
   -- Snippets
-  -- use 'SirVer/ultisnips'
-  -- use 'honza/vim-snippets'
-  -- use 'natebosch/dartlang-snippets'
+  --use 'SirVer/ultisnips'
+  --use 'honza/vim-snippets'
+  --use 'natebosch/dartlang-snippets'
 
   -- Utils
   use 'tpope/vim-surround'
@@ -38,5 +38,8 @@ return require('packer').startup(function(use)
 
   -- Dart
   use 'dart-lang/dart-vim-plugin'
+
+  -- Vue
+  use 'posva/vim-vue' 
 end)
 

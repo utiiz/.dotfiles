@@ -1,4 +1,5 @@
 local nnoremap = require("utiiz.keymap").nnoremap
+local vnoremap = require("utiiz.keymap").vnoremap
 local inoremap = require("utiiz.keymap").inoremap
 local xnoremap = require("utiiz.keymap").xnoremap
 local imap = require("utiiz.keymap").imap
@@ -38,6 +39,11 @@ nnoremap("<C-j>", "<C-d>zz")
 nnoremap("<C-k>", "<C-u>zz")
 nnoremap("<C-d>", "<C-d>zz")
 nnoremap("<C-u>", "<C-u>zz")
+
+nnoremap("J", ":m .+1<CR>==")
+nnoremap("K", ":m .-2<CR>==")
+vnoremap("J", ":m '>+1<CR>gv=gv")
+vnoremap("K", ":m '<-2<CR>gv=gv")
 
 -- Telescope
 nnoremap("<C-p>", ":Telescope<CR>")

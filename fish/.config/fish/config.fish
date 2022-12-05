@@ -13,9 +13,11 @@ alias py 'python3'
 alias neo 'neofetch'
 alias dot 'nvim ~/.dotfiles/'
 alias conf 'nvim ~/.config/'
-alias lab 'cd ~/lab/'
+alias lab 'cd /mnt/d/Appli/prj/WebApplications/WebUserInterface/'
+alias dev 'cd ~/lab/'
 alias zmk 'v /mnt/c/Users/Tanguy/Lab/zmk'
 alias etc 'nvim ~/.dotfiles/tmux/.tmux.conf'
+alias efc 'nvim ~/.dotfiles/fish/.config/fish/config.fish'
 
 # Fish syntax highlighting
 # set -g fish_color_autosuggestion '555'  'brblack'
