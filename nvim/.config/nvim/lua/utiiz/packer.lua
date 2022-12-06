@@ -12,6 +12,7 @@ return require('packer').startup(function(use)
 
   -- Git
   use 'mhinz/vim-signify'
+  use 'tpope/vim-fugitive'
 
   -- colorscheme
   use { "catppuccin/nvim", as = "catppuccin" }
@@ -31,10 +32,10 @@ return require('packer').startup(function(use)
 
   -- Utils
   use 'tpope/vim-surround'
+  use 'jiangmiao/auto-pairs'
 
   -- Language support
-  use {'neoclide/coc.nvim', branch =  'release'}
-  use 'jiangmiao/auto-pairs'
+  -- use {'neoclide/coc.nvim', branch =  'release'}
 
   -- Dart
   use 'dart-lang/dart-vim-plugin'

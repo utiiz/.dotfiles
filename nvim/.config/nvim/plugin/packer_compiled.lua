@@ -73,7 +73,73 @@ end
 
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
-_G.packer_plugins = {}
+_G.packer_plugins = {
+  ["auto-pairs"] = {
+    loaded = true,
+    path = "/home/utiiz/.local/share/nvim/site/pack/packer/start/auto-pairs",
+    url = "https://github.com/jiangmiao/auto-pairs"
+  },
+  catppuccin = {
+    loaded = true,
+    path = "/home/utiiz/.local/share/nvim/site/pack/packer/start/catppuccin",
+    url = "https://github.com/catppuccin/nvim"
+  },
+  ["dart-vim-plugin"] = {
+    loaded = true,
+    path = "/home/utiiz/.local/share/nvim/site/pack/packer/start/dart-vim-plugin",
+    url = "https://github.com/dart-lang/dart-vim-plugin"
+  },
+  harpoon = {
+    loaded = true,
+    path = "/home/utiiz/.local/share/nvim/site/pack/packer/start/harpoon",
+    url = "https://github.com/ThePrimeagen/harpoon"
+  },
+  ["lualine.nvim"] = {
+    loaded = true,
+    path = "/home/utiiz/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+    url = "https://github.com/nvim-lualine/lualine.nvim"
+  },
+  ["nvim-treesitter"] = {
+    loaded = true,
+    path = "/home/utiiz/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter"
+  },
+  ["nvim-treesitter-context"] = {
+    loaded = true,
+    path = "/home/utiiz/.local/share/nvim/site/pack/packer/start/nvim-treesitter-context",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter-context"
+  },
+  ["packer.nvim"] = {
+    loaded = true,
+    path = "/home/utiiz/.local/share/nvim/site/pack/packer/start/packer.nvim",
+    url = "https://github.com/wbthomason/packer.nvim"
+  },
+  ["plenary.nvim"] = {
+    loaded = true,
+    path = "/home/utiiz/.local/share/nvim/site/pack/packer/start/plenary.nvim",
+    url = "https://github.com/nvim-lua/plenary.nvim"
+  },
+  ["vim-fugitive"] = {
+    loaded = true,
+    path = "/home/utiiz/.local/share/nvim/site/pack/packer/start/vim-fugitive",
+    url = "https://github.com/tpope/vim-fugitive"
+  },
+  ["vim-signify"] = {
+    loaded = true,
+    path = "/home/utiiz/.local/share/nvim/site/pack/packer/start/vim-signify",
+    url = "https://github.com/mhinz/vim-signify"
+  },
+  ["vim-surround"] = {
+    loaded = true,
+    path = "/home/utiiz/.local/share/nvim/site/pack/packer/start/vim-surround",
+    url = "https://github.com/tpope/vim-surround"
+  },
+  ["vim-vue"] = {
+    loaded = true,
+    path = "/home/utiiz/.local/share/nvim/site/pack/packer/start/vim-vue",
+    url = "https://github.com/posva/vim-vue"
+  }
+}
 
 time([[Defining packer_plugins]], false)
 
