@@ -45,6 +45,9 @@ nnoremap("K", ":m .-2<CR>==")
 vnoremap("J", ":m '>+1<CR>gv=gv")
 vnoremap("K", ":m '<-2<CR>gv=gv")
 
+nnoremap("n", "nzzzv")
+nnoremap("N", "Nzzzv")
+
 -- Telescope
 nnoremap("<C-p>", ":Telescope<CR>")
 nnoremap("<C-p>", function()
