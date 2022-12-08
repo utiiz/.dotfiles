@@ -1,7 +1,7 @@
 set fish_greeting
 set fish_function_path $fish_function_path ~/plugin-foreign-env/functions
 
-# aliases
+# Alias
 alias ll '/usr/bin/exa --long --header --git --all'
 alias nix-env '~/.nix-profile/bin/nix-env'
 alias stow '/usr/bin/stow'
@@ -21,28 +21,15 @@ alias etc 'nvim ~/.dotfiles/tmux/.tmux.conf'
 alias efc 'nvim ~/.dotfiles/fish/.config/fish/config.fish'
 alias sfc 'source ~/.config/fish/config.fish'
 
-# Fish syntax highlighting
-# set -g fish_color_autosuggestion '555'  'brblack'
-# set -g fish_color_cancel -r
-# set -g fish_color_command --bold
-# set -g fish_color_comment red
-# set -g fish_color_cwd green
-# set -g fish_color_cwd_root red
-# set -g fish_color_end brmagenta
-# set -g fish_color_error brred
-# set -g fish_color_escape 'bryellow'  '--bold'
-# set -g fish_color_history_current --bold
-# set -g fish_color_host normal
-# set -g fish_color_match --background=brblue
-# set -g fish_color_normal normal
-# set -g fish_color_operator bryellow
-# set -g fish_color_param cyan
-# set -g fish_color_quote yellow
-# set -g fish_color_redirection brblue
-# set -g fish_color_search_match 'bryellow'  '--background=brblack'
-# set -g fish_color_selection 'white'  '--bold'  '--background=brblack'
-# set -g fish_color_user brgreen
-# set -g fish_color_valid_path --underline
+# Docker Alias
+alias dls 'docker container ls'
+alias dlsa 'docker container ls -a'
+alias dstopall 'docker container stop (docker container ls -aq)'
+alias drmall 'docker container rm (docker container ls -aq)'
+alias daemonshell 'docker run -it --privileged --pid=host debian nsenter -t 1 -m -u -n -i sh'
+function dshell
+    docker container exec -ti $argv[1] bash || docker container exec -ti $argv[1] sh
+end
 
 set -x GOPATH ~/go
 set -x GO111MODULE on

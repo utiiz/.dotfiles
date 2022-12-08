@@ -99,6 +99,11 @@ _G.packer_plugins = {
     path = "/home/utiiz/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
   },
+  ["nvim-transparent"] = {
+    loaded = true,
+    path = "/home/utiiz/.local/share/nvim/site/pack/packer/start/nvim-transparent",
+    url = "https://github.com/xiyaowong/nvim-transparent"
+  },
   ["nvim-treesitter"] = {
     loaded = true,
     path = "/home/utiiz/.local/share/nvim/site/pack/packer/start/nvim-treesitter",

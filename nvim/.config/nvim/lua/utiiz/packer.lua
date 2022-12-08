@@ -42,5 +42,8 @@ return require('packer').startup(function(use)
 
   -- Vue
   use 'posva/vim-vue' 
+
+  -- Transparency
+  use 'xiyaowong/nvim-transparent'
 end)
 

@@ -21,6 +21,7 @@
   # TERM: xterm-256color-italic
 
 window:
+  opacity: 0.8
   # Window dimensions (changes require restart)
   #
   # Specified in number of columns/lines, not pixels. If both are zero this
@@ -48,6 +49,7 @@ window:
   # - transparent: title bar, transparent background and title bar buttons
   # - buttonless: title bar, transparent background, but no title bar buttons
   #  decorations: buttonless
+  decorations: 'None'
 
   # Startup Mode (changes require restart)
   #
@@ -75,8 +77,8 @@ font:
   # Style can be specified to pick a specific face.
   normal:
     # family: Iosevka Nerd Font
-    family: Jetbrains Mono
-    style: Medium
+    family: FiraCode Nerd Font
+    style: Regular
     # family: "Fira Code"
     # family: "Source Code Pro"
     # style: Retina
@@ -84,7 +86,7 @@ font:
   # The bold font face
   bold:
     #family: Iosevka Nerd Font
-    family: Jetbrains Mono
+    family: FiraCode Nerd Font
     style: Bold
     # family: "Fira Code"
     # family: "Source Code Pro"
@@ -92,15 +94,15 @@ font:
   # The italic font face
   italic:
     #family: Iosevka Nerd Font
-    family: Jetbrains Mono
-    style: "Light Italic"
+    family: FiraCode Nerd Font
+    style: Italic
     # style: "Light Oblique"
     # family: "Fira Code"
     # family: "Source Code Pro"
     # style: "Medium Italic"
 
   # Point size of the font
-  size: 12.0
+  size: 10.0
 
   # Offset is the extra space around each character. offset.y can be thought of
   # as modifying the linespacing, and offset.x as modifying the letter spacing.
@@ -114,22 +116,6 @@ font:
   glyph_offset:
     x: 0
     y: 0
-
-  # Thin stroke font rendering (macOS only)
-  #
-  # Thin strokes are suitable for retina displays, but for non-retina you
-  # probably want this set to false.
-  #
-  # macOS >= 10.14.x:
-  #
-  # If the font quality on non-retina display looks bad then set
-  # `use_thin_strokes` to `true` and enable font smoothing by running the
-  # following command:
-  #   `defaults write -g CGFontRenderingFontSmoothingDisabled -bool NO`
-  #
-  # This is a global setting and will require a log out or restart to take
-  # effect.
-  use_thin_strokes: true
 
 # When true, bold text is drawn using the bright variant of colors.
 draw_bold_text_with_bright_colors: false
