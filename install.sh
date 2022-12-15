@@ -1,3 +1,4 @@
+#!/bin/bash
 ### Install Nix
 # --no-daemon
 sh <(curl -L https://nixos.org/nix/install)
