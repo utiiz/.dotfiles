@@ -13,6 +13,7 @@ return require('packer').startup(function(use)
   -- Git
   use 'mhinz/vim-signify'
   use 'tpope/vim-fugitive'
+  use 'f-person/git-blame.nvim'
 
   -- colorscheme
   use { "catppuccin/nvim", as = "catppuccin" }

@@ -53,3 +53,7 @@ nnoremap("<C-p>", ":Telescope<CR>")
 nnoremap("<C-p>", function()
     require('telescope.builtin').find_files()
 end)
+
+nnoremap("<C-t>", ":tabnew<CR>:Ex<CR>")
+nnoremap("<C-w>", ":tabc<CR>")
+nnoremap(";", "A;<C-c>")
