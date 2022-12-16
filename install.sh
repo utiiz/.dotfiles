@@ -1,7 +1,7 @@
 #!/bin/bash
 ### Install Nix
 # --no-daemon
-sh <(curl -L https://nixos.org/nix/install)
+sh <(curl -L https://nixos.org/nix/install) --no-daemon
 
 ### Then source it
 . ~/.nix-profile/etc/profile.d/nix.sh
@@ -35,6 +35,13 @@ stow git
 stow fish
 stow nvim
 stow starship
+
+sudo ln -s ~/.nix-profile/bin/nvim /usr/bin/nvim
+sudo ln -s ~/.nix-profile/bin/fish /usr/bin/fish
+sudo ln -s ~/.nix-profile/bin/git /usr/bin/git
+sudo ln -s ~/.nix-profile/bin/bat /usr/bin/bat
+sudo ln -s ~/.nix-profile/bin/exa /usr/bin/exa
+sudo ln -s ~/.nix-profile/bin/tmux /usr/bin/tmux
 
 touch ~/.hushlogin
 

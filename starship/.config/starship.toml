@@ -17,3 +17,7 @@ style = "#F02E6E bold"
 
 [git_status]
 style = "#F02E6E bold"
+
+[hostname]
+ssh_symbol = "🌏 "
+style = "#74c7ec bold"
