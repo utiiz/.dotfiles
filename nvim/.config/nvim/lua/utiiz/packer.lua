@@ -22,6 +22,11 @@ return require('packer').startup(function(use)
 
   --File and folder management
   use("nvim-lua/plenary.nvim")
+  use {
+    'nvim-telescope/telescope.nvim', tag = '0.1.0',
+    -- or                            , branch = '0.1.x',
+    requires = { {'nvim-lua/plenary.nvim'} }
+  }
   -- use("nvim-lua/popup.nvim")
   -- use('nvim-telescope/telescope.nvim')
   use("ThePrimeagen/harpoon")
