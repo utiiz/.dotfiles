@@ -24,9 +24,6 @@ nmap("gr", "<Plug>(coc-references)", {silent = true})
 
 nmap("rn", "<Plug>(coc-rename)", {silent = true})
 
--- Use K to show the documentation in preview window
-nnoremap("K", ":call CocActionAsync(\'doHover\')<CR>", {silent = true})
-
 -- Search
 nnoremap("<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
 
@@ -39,9 +36,10 @@ nnoremap("<C-j>", "<C-d>zz")
 nnoremap("<C-k>", "<C-u>zz")
 nnoremap("<C-d>", "<C-d>zz")
 nnoremap("<C-u>", "<C-u>zz")
+nnoremap("<leader>r", ":CargoRun<CR>")
 
-nnoremap("J", ":m .+1<CR>==")
-nnoremap("K", ":m .-2<CR>==")
+-- nnoremap("J", ":m .+1<CR>==")
+-- nnoremap("K", ":m .-2<CR>==")
 vnoremap("J", ":m '>+1<CR>gv=gv")
 vnoremap("K", ":m '<-2<CR>gv=gv")
 
@@ -54,6 +52,7 @@ nnoremap("<C-p>", function()
     require('telescope.builtin').find_files()
 end)
 
-nnoremap("<C-t>", ":tabnew<CR>:Ex<CR>")
-nnoremap("<C-w>", ":tabc<CR>")
+nnoremap("<leader>t", ":tabnew<CR>:Ex<CR>")
+nnoremap("<leader>w", ":tabc<CR>")
 nnoremap(";", "A;<C-c>")
+nnoremap("V", "$V")

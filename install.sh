@@ -9,7 +9,7 @@ sh <(curl -L https://nixos.org/nix/install) --no-daemon
 ### Install packages
 nix-env -iA \
 	nixpkgs.git \
-	nixpkgs.neovim \
+###	nixpkgs.neovim \
 	nixpkgs.fish \
 	nixpkgs.ripgrep \
 	nixpkgs.stow \

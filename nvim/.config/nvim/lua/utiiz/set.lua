@@ -1,3 +1,4 @@
+vim.api.nvim_command("set mouse=")
 vim.opt.guicursor = ""
 
 vim.opt.laststatus = 3

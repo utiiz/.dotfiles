@@ -1,7 +1,7 @@
 configuration{
     modi: "run,drun,window";
     lines: 5;
-    font: "JetBrainsMono Nerd Font 14";
+    font: "FiraCode NF 14";
     show-icons: true;
     icon-theme: "Oranchelo";
     terminal: "st";
@@ -81,8 +81,21 @@ listview {
 
 element {
     padding: 5px;
+}
+
+element normal.normal {
+    text-color: @fg-col;
     background-color: @bg-col;
-    text-color: @fg-col  ;
+}
+
+element alternate.normal {
+    text-color: @fg-col;
+    background-color: @bg-col;
+}
+
+element selected.normal {
+    text-color: @blue;
+    background-color: @bg-col;
 }
 
 element-icon {

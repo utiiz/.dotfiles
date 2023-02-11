@@ -5,8 +5,7 @@ set fish_function_path $fish_function_path ~/plugin-foreign-env/functions
 alias ll '~/.nix-profile/bin/exa --long --header --git --all'
 alias nix-env '~/.nix-profile/bin/nix-env'
 alias stow '~/.nix-profile/bin/stow'
-alias nvim '~/.nix-profile/bin/nvim'
-alias nvm '/mnt/c/Users/A98011591/AppData/Roaming/nvm/nvm.exe'
+alias nvim '/usr/local/bin/nvim'
 alias z '~/.nix-profile/bin/z'
 alias v 'nvim'
 alias vim 'nvim'
@@ -14,7 +13,7 @@ alias py 'python3'
 alias neo 'neofetch'
 alias dot 'nvim ~/.dotfiles/'
 alias conf 'nvim ~/.config/'
-alias lab 'cd /mnt/d/Appli/prj/WebApplications/WebUserInterface/'
+alias lab 'cd ~/lab'
 alias dev 'cd ~/lab/'
 alias zmk 'v /mnt/c/Users/Tanguy/Lab/zmk'
 alias etc 'nvim ~/.dotfiles/tmux/.tmux.conf'
@@ -32,7 +31,10 @@ function dshell
 end
 
 set -x GOPATH ~/go
+set -x PATH $PATH /usr/local/go/bin $GOPATH/bin
 set -x GO111MODULE on
+
+set -x PATH $HOME/.cargo/bin $PATH
 
 starship init fish | source
 
@@ -40,3 +42,7 @@ starship init fish | source
 # nvm use default > /dev/null
 
 # test -s /home/utiiz/.nvm-fish/nvm.fish; and source /home/utiiz/.nvm-fish/nvm.fish
+
+fish_add_path $HOME/.local/bin
+
+fish_add_path /home/utiiz/.spicetify
