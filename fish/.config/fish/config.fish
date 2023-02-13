@@ -10,7 +10,7 @@ set -Ux FZF_DEFAULT_OPTS "\
 # Alias
 alias ll 'exa --long --header --git --all'
 alias nix-env '~/.nix-profile/bin/nix-env'
-alias stow '~/.nix-profile/bin/stow'
+alias stow '/usr/bin/stow'
 alias nvim '/usr/bin/nvim'
 alias z '~/.nix-profile/bin/z'
 alias v 'nvim'

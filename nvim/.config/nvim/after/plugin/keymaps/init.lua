@@ -60,3 +60,4 @@ nnoremap(";", "A;<C-c>")
 nnoremap("V", "$V")
 
 nnoremap("<C-f>", ":silent !tmux neww tmux-sessionizer<CR>", {silent = true})
+nnoremap("<leader>x", ":!chmod +x %<CR>", {silent = true})
