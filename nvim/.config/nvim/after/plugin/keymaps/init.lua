@@ -46,6 +46,8 @@ vnoremap("K", ":m '<-2<CR>gv=gv")
 nnoremap("n", "nzzzv")
 nnoremap("N", "Nzzzv")
 
+nnoremap("V", "V$h")
+
 -- Telescope
 nnoremap("<C-p>", ":Telescope<CR>")
 nnoremap("<C-p>", function()
@@ -56,3 +58,5 @@ nnoremap("<leader>t", ":tabnew<CR>:Ex<CR>")
 nnoremap("<leader>w", ":tabc<CR>")
 nnoremap(";", "A;<C-c>")
 nnoremap("V", "$V")
+
+nnoremap("<C-f>", ":silent !tmux neww tmux-sessionizer<CR>", {silent = true})

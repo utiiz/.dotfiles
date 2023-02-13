@@ -8,7 +8,7 @@
         todo = ! git grep --extended-regexp -I --line-number --break --heading --color=auto 'TODO|FIXME'
         todo-list = ! git grep --extended-regexp -I --line-number --count 'TODO|FIXME'
         st = status
-        d = diff
+        d = ! git diff --name-only | fzf -m --ansi --preview "git diff --color=always -- {-1}"
 [user]
 	email = t.kervran29@gmail.com
 	name = Tanguy Kervran
