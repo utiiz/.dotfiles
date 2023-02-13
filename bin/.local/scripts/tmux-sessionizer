@@ -3,7 +3,7 @@
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    selected=$(find ~ ~/lab /mnt/d/Appli/prj/WebApplications/WebUserInterface /mnt/d/Appli/prj /mnt/c/Users/A98011591/qmk_firmware/keyboards/keebio/iris  -mindepth 1 -maxdepth 1 -type d | fzf)
+    selected=$(find ~ ~/lab -mindepth 1 -maxdepth 1 -type d | fzf)
 fi
 
 if [[ -z $selected ]]; then
