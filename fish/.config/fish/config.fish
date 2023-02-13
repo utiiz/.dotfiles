@@ -2,11 +2,16 @@ set fish_greeting
 set fish_function_path $fish_function_path ~/plugin-foreign-env/functions
 set -gx PATH ~/.dotfiles/bin/.local/scripts $PATH
 
+set -Ux FZF_DEFAULT_OPTS "\
+--color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
+--color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
+--color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8"
+
 # Alias
-alias ll '~/.nix-profile/bin/exa --long --header --git --all'
+alias ll 'exa --long --header --git --all'
 alias nix-env '~/.nix-profile/bin/nix-env'
 alias stow '~/.nix-profile/bin/stow'
-alias nvim '/usr/local/bin/nvim'
+alias nvim '/usr/bin/nvim'
 alias z '~/.nix-profile/bin/z'
 alias v 'nvim'
 alias vim 'nvim'
@@ -48,6 +53,6 @@ starship init fish | source
 
 # test -s /home/utiiz/.nvm-fish/nvm.fish; and source /home/utiiz/.nvm-fish/nvm.fish
 
-fish_add_path $HOME/.local/bin
+# fish_add_path $HOME/.local/bin
 
-fish_add_path /home/utiiz/.spicetify
+# fish_add_path /home/utiiz/.spicetify
