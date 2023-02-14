@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
-echo "Gitmoji"
+selected=$(cat ~/.dotfiles/git/.gitmoji | jq '.gitmojis[] | "\(.emoji) \(.code) - \(.description)"' | fzf | sed 's/\"\(.*\) \(:.*:\).*/\1/')
+echo $selected | xclip -in -selection clipboard
