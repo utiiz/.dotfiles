@@ -35,3 +35,6 @@ stow
 chmod
 chown
 make
+sort
+bc
+head
