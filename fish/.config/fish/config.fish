@@ -39,6 +39,7 @@ function dshell
 end
 
 bind \cf "tmux-sessionizer"
+bind \cg "gitmoji"
 
 set -x GOPATH ~/go
 set -x PATH $PATH /usr/local/go/bin $GOPATH/bin
