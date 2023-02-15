@@ -6,7 +6,7 @@ local imap = require("utiiz.keymap").imap
 local xmap = require("utiiz.keymap").xmap
 local nmap = require("utiiz.keymap").nmap
 
-nnoremap("<leader>pv", "<cmd>Ex<CR>")
+nnoremap("<C-_>", "<cmd>Ex<CR>")
 
 -- Coc keymap
 imap("<TAB>", "<Plug>(coc-snippets-expand)")
