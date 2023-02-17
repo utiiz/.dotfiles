@@ -187,8 +187,13 @@ exec --no-startup-id picom
 exec --no-startup-id feh --bg-fill ~/Pictures/wallpapers/japan-pixel-art.jpg
 exec --no-startup-id i3-msg 'workspace $ws1; exec /usr/bin/alacritty'
 exec --no-startup-id i3-msg 'workspace $ws1; exec /usr/bin/firefox'
-exec --no-startup-id i3-msg 'workspace $ws3; exec /usr/bin/spotify'
-exec --no-startup-id i3-msg 'workspace $ws4; exec /usr/bin/discord'
+exec --no-startup-id i3-msg 'workspace $ws2; exec /usr/bin/spotify'
+exec --no-startup-id i3-msg 'workspace $ws3; exec /usr/bin/discord'
+
+assign [class="alacritty"] $ws1
+assign [class="firefox"] $ws1
+assign [class="discord"] $ws2
+assign [class="spotify"] $ws3
 
 exec --no-startup-id xset s off
 exec --no-startup-id xset -dpms

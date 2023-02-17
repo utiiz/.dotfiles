@@ -15,6 +15,7 @@ return require('packer').startup(function(use)
   use 'tpope/vim-fugitive'
   use 'f-person/git-blame.nvim'
   use 'github/copilot.vim'
+  use 'mbbill/undotree'
 
   -- colorscheme
   use { "catppuccin/nvim", as = "catppuccin" }
@@ -22,7 +23,6 @@ return require('packer').startup(function(use)
   use ('nvim-treesitter/nvim-treesitter-context')
 
   --File and folder management
-  use("nvim-lua/plenary.nvim")
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.0',
     -- or                            , branch = '0.1.x',
@@ -36,10 +36,6 @@ return require('packer').startup(function(use)
   --use 'SirVer/ultisnips'
   --use 'honza/vim-snippets'
   --use 'natebosch/dartlang-snippets'
-
-  -- Utils
-  use 'tpope/vim-surround'
-  use 'jiangmiao/auto-pairs'
 
   -- Language support
   -- use {'neoclide/coc.nvim', branch =  'release'}
