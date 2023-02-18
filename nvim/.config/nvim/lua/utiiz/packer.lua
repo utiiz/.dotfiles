@@ -28,17 +28,12 @@ return require('packer').startup(function(use)
     -- or                            , branch = '0.1.x',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
-  -- use("nvim-lua/popup.nvim")
-  -- use('nvim-telescope/telescope.nvim')
   use("ThePrimeagen/harpoon")
 
-  -- Snippets
-  --use 'SirVer/ultisnips'
-  --use 'honza/vim-snippets'
-  --use 'natebosch/dartlang-snippets'
+  -- Utils
+  use 'jiangmiao/auto-pairs'
 
   -- Language support
-  -- use {'neoclide/coc.nvim', branch =  'release'}
   use {
     'VonHeikemen/lsp-zero.nvim',
     requires = {
