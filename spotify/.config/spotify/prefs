@@ -1,5 +1,5 @@
-autologin.blob="xJLkqBCra3xwV0O6clVQNLDItlhewvdb9JOUMu8IpjN/7SdHnFC2nQ6H33FMaYE+nBL22kpz5wtUFKlf3qEGAjpVSj5YEtQ5KWdzF4IBgQ7JWupvMQUeGTy+173VJEYWf83ogG0c3skhn+dUmD24chxYytoiYILeqnLmxCK9uti9LmpK+98qLH8KOaLTpXOEToAtggMKYhcNbU2OMgoo2Ne6enDbH2K5UAgJGLjLFQ7BibNiC1QiXFOc7vCvsTbldQm/8mvNwWpHdX49GGYSOA=="
 autologin.saved_credentials="{\"utiiz\":[\"utiiz\",\"xJLkqBCra3xwV0O6clVQNLDItlhewvdb9JOUMu8IpjN/7SdHnFC2nQ6H33FMaYE+nBL22kpz5wtUFKlf3qEGAjpVSj5YEtQ5KWdzF4IBgQ7JWupvMQUeGTy+173VJEYWf83ogG0c3skhn+dUmD24chxYytoiYILeqnLmxCK9uti9LmpK+98qLH8KOaLTpXOEToAtggMKYhcNbU2OMgoo2Ne6enDbH2K5UAgJGLjLFQ7BibNiC1QiXFOc7vCvsTbldQm/8mvNwWpHdX49GGYSOA==\"]}"
+autologin.blob="xJLkqBCra3xwV0O6clVQNLDItlhewvdb9JOUMu8IpjN/7SdHnFC2nQ6H33FMaYE+nBL22kpz5wtUFKlf3qEGAjpVSj5YEtQ5KWdzF4IBgQ7JWupvMQUeGTy+173VJEYWf83ogG0c3skhn+dUmD24chxYytoiYILeqnLmxCK9uti9LmpK+98qLH8KOaLTpXOEToAtggMKYhcNbU2OMgoo2Ne6enDbH2K5UAgJGLjLFQ7BibNiC1QiXFOc7vCvsTbldQm/8mvNwWpHdX49GGYSOA=="
 autologin.username="utiiz"
 app.window.position.saved=true
 app.window.position.height=688
@@ -9,6 +9,6 @@ app.window.position.x=519
 autologin.canonical_username="utiiz"
 storage.last-location="/home/utiiz/.cache/spotify/Storage"
 app.window.position.width=493
-core.clock_delta=0
+core.clock_delta=-1
 app.last-launched-version="1.1.84.716.gc5f8b819"
 app.autostart-configured=true

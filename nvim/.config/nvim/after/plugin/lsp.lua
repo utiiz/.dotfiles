@@ -5,7 +5,6 @@ lsp.preset("recommended")
 lsp.ensure_installed({
   'tsserver',
   'eslint',
-  'sumneko_lua',
   'rust_analyzer',
 })
 
@@ -49,6 +48,9 @@ vim.diagnostic.config({
   update_in_insert = false,
   underline = true,
   severity_sort = false,
-  float = true,
+  float = {
+    source = "always",
+    border = "rounded",
+  }
 })
 

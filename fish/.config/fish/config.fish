@@ -41,6 +41,7 @@ end
 bind \cf "tmux-sessionizer"
 bind \cg "gitmoji"
 
+set -x XDG_CONFIG_HOME ~/.config
 set -x GOPATH ~/go
 set -x PATH $PATH /usr/local/go/bin $GOPATH/bin
 set -x GO111MODULE on

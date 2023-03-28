@@ -1,6 +1,6 @@
 [core]
   autocrlf = false
-  editor = "vim"
+  editor = "/usr/bin/nvim"
 [credential]
   helper = store
 [alias]
