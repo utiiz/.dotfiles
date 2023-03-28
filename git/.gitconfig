@@ -1,14 +1,15 @@
 [core]
-        autocrlf = false
+  autocrlf = false
+  editor = "vim"
 [credential]
-        helper = store
+  helper = store
 [alias]
-        cm = commit -m
-        alias = ! git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\ =\\ /
-        todo = ! git grep --extended-regexp -I --line-number --break --heading --color=auto 'TODO|FIXME'
-        todo-list = ! git grep --extended-regexp -I --line-number --count 'TODO|FIXME'
-        st = status
-        d = ! git diff --name-only | fzf -m --ansi --preview "git diff --color=always -- {-1}"
+  cm = commit -m
+  alias = ! git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\ =\\ /
+  todo = ! git grep --extended-regexp -I --line-number --break --heading --color=auto 'TODO|FIXME'
+  todo-list = ! git grep --extended-regexp -I --line-number --count 'TODO|FIXME'
+  st = status
+  d = ! git diff --name-only | fzf -m --ansi --preview "git diff --color=always -- {-1}"
 [user]
-	email = t.kervran29@gmail.com
-	name = Tanguy Kervran
+  email = t.kervran29@gmail.com
+  name = Tanguy Kervran
