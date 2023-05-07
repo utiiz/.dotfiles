@@ -1,2 +1,0 @@
-TMUX
-tmux set-option status off/on
