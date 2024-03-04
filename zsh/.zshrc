@@ -36,3 +36,9 @@ export NVM_DIR="$HOME/.nvm"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+export FZF_DEFAULT_OPTS='
+	--color=fg:#908caa,bg:#191724,hl:#ebbcba
+	--color=fg+:#e0def4,bg+:#26233a,hl+:#ebbcba
+	--color=info:#9ccfd8,prompt:#908caa,pointer:#c4a7e7
+	--color=marker:#eb6f92,spinner:#f6c177,header:#31748F'
