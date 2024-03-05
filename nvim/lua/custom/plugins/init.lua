@@ -27,4 +27,51 @@ return {
   {
     'Exafunction/codeium.vim',
   },
+  {
+    'ThePrimeagen/harpoon',
+    branch = 'harpoon2',
+    dependencies = { 'nvim-lua/plenary.nvim' },
+    config = function()
+      local harpoon = require 'harpoon'
+      harpoon.setup {}
+
+      vim.keymap.set('n', '<leader>a', function()
+        harpoon:list():append()
+      end)
+      vim.keymap.set('n', '<C-e>', function()
+        harpoon.ui:toggle_quick_menu(harpoon:list())
+      end)
+
+      -- vim.keymap.set('n', '<C-!>', function()
+      --   harpoon:list():select(1)
+      -- end)
+      -- vim.keymap.set('n', '<C-@>', function()
+      --   harpoon:list():select(2)
+      -- end)
+      -- vim.keymap.set('n', '<C-#>', function()
+      --   harpoon:list():select(3)
+      -- end)
+      -- vim.keymap.set('n', '<C-$>', function()
+      --   harpoon:list():select(4)
+      -- end)
+    end,
+  },
+  {
+    'kdheepak/lazygit.nvim',
+    cmd = {
+      'LazyGit',
+      'LazyGitConfig',
+      'LazyGitCurrentFile',
+      'LazyGitFilter',
+      'LazyGitFilterCurrentFile',
+    },
+    -- optional for floating window border decoration
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+    },
+    config = function()
+      vim.g.lazygit_floating_window_scaling_factor = 1
+      vim.cmd.hi 'NormalFloat guibg=#191724 guifg=#E0DEF4'
+    end,
+  },
 }
