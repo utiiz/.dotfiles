@@ -74,4 +74,7 @@ return {
       vim.cmd.hi 'NormalFloat guibg=#191724 guifg=#E0DEF4'
     end,
   },
+  {
+    'joerdav/templ.vim',
+  },
 }

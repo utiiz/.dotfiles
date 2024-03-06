@@ -221,6 +221,26 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+vim.api.nvim_create_autocmd('BufEnter', {
+  desc = 'Add highlight of current line when entering buffer',
+  group = vim.api.nvim_create_augroup('add-highlight-current-line', { clear = true }),
+  pattern = '*',
+  callback = function()
+    -- vim.cmd("TSBufEnable highlight")
+    vim.cmd 'set cul'
+  end,
+})
+
+vim.api.nvim_create_autocmd('BufLeave', {
+  desc = 'Remove highlight of current line when leaving buffer',
+  group = vim.api.nvim_create_augroup('remove-highlight-current-line', { clear = true }),
+  pattern = '*',
+  callback = function()
+    -- vim.cmd("TSBufDisable highlight")
+    vim.cmd 'set nocul'
+  end,
+})
+
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
