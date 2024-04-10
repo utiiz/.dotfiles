@@ -28,6 +28,30 @@ return {
     'Exafunction/codeium.vim',
   },
   {
+    'christoomey/vim-tmux-navigator',
+    cmd = {
+      'TmuxNavigateLeft',
+      'TmuxNavigateDown',
+      'TmuxNavigateUp',
+      'TmuxNavigateRight',
+      'TmuxNavigatePrevious',
+    },
+    keys = {
+      { '<c-h>', '<cmd><C-U>TmuxNavigateLeft<cr>' },
+      { '<c-j>', '<cmd><C-U>TmuxNavigateDown<cr>' },
+      { '<c-k>', '<cmd><C-U>TmuxNavigateUp<cr>' },
+      { '<c-l>', '<cmd><C-U>TmuxNavigateRight<cr>' },
+      { '<c-\\>', '<cmd><C-U>TmuxNavigatePrevious<cr>' },
+    },
+  },
+  {
+    'lukas-reineke/headlines.nvim',
+    dependencies = { 'nvim-treesitter/nvim-treesitter' },
+    config = function()
+      require('headlines').setup {}
+    end,
+  },
+  {
     'ThePrimeagen/harpoon',
     branch = 'harpoon2',
     dependencies = { 'nvim-lua/plenary.nvim' },
@@ -42,16 +66,16 @@ return {
         harpoon.ui:toggle_quick_menu(harpoon:list())
       end)
 
-      -- vim.keymap.set('n', '<C-!>', function()
+      -- vim.keymap.set('n', '<C-h>', function()
       --   harpoon:list():select(1)
       -- end)
-      -- vim.keymap.set('n', '<C-@>', function()
+      -- vim.keymap.set('n', '<C-j>', function()
       --   harpoon:list():select(2)
       -- end)
-      -- vim.keymap.set('n', '<C-#>', function()
+      -- vim.keymap.set('n', '<C-k>', function()
       --   harpoon:list():select(3)
       -- end)
-      -- vim.keymap.set('n', '<C-$>', function()
+      -- vim.keymap.set('n', '<C-l>', function()
       --   harpoon:list():select(4)
       -- end)
     end,

@@ -165,10 +165,11 @@ vim.opt.expandtab = true
 
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true
+vim.keymap.set('i', '<C-c>', '<Esc>')
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 vim.keymap.set('n', '<Esc>', function()
   vim.cmd 'nohlsearch'
-  vim.cmd 'call codeium#Clear()'
+  -- vim.cmd 'call codeium#Clear()'
 end)
 
 -- Diagnostic keymaps
@@ -204,8 +205,18 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 vim.keymap.set('n', '<leader>lg', '<cmd>LazyGit<cr>', { desc = '[L]azy [G]it' })
 
 -- Zoom
-vim.keymap.set('n', '<leader>zi', '<cmd>:tabnew %<cr>', { desc = '[Z]oom [I]n' })
+-- vim.keymap.set('n', '<leader>zi', '<cmd>:tabnew %<cr>', { desc = '[Z]oom [I]n' })
+vim.keymap.set('n', '<leader>zi', function()
+  local window = vim.api.nvim_get_current_win()
+  -- Tab new current file and cursor position
+  vim.cmd ':tabnew %'
+  vim.api.nvim_win_set_cursor(0, vim.api.nvim_win_get_cursor(window))
+end, { desc = '[Z]oom [I]n' })
 vim.keymap.set('n', '<leader>zo', '<cmd>:tabclose<cr>', { desc = '[Z]oom [O]ut' })
+
+-- Split
+vim.keymap.set('n', '<leader>wsh', '<cmd>:split<cr>', { desc = '[W]orkspace [S]plit [H]orizontal' })
+vim.keymap.set('n', '<leader>wsv', '<cmd>:vsplit<cr>', { desc = '[W]orkspace [S]plit [V]ertical' })
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
@@ -238,6 +249,16 @@ vim.api.nvim_create_autocmd('BufLeave', {
   callback = function()
     -- vim.cmd("TSBufDisable highlight")
     vim.cmd 'set nocul'
+  end,
+})
+
+-- Clear codeium suggestions on mode change
+vim.api.nvim_create_autocmd('ModeChanged', {
+  desc = 'Clear codeium suggestions on mode change',
+  group = vim.api.nvim_create_augroup('clear-codeium', { clear = true }),
+  pattern = '*:n',
+  callback = function()
+    -- vim.cmd 'call codeium#Clear()'
   end,
 })
 
@@ -413,7 +434,7 @@ require('lazy').setup {
       vim.keymap.set('n', '<leader>ss', builtin.builtin, { desc = '[S]earch [S]elect Telescope' })
       vim.keymap.set('n', '<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
       vim.keymap.set('n', '<leader>sg', function()
-        builtin.grep_string { hidden = true }
+        builtin.live_grep { hidden = true }
       end, { desc = '[S]earch by [G]rep' })
       vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
       vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
@@ -774,6 +795,7 @@ require('lazy').setup {
     config = function()
       -- You can configure highlights by doing something like
       vim.cmd.hi 'Comment gui=none'
+      vim.cmd.hi 'FloatBorder guibg=#FF0000'
 
       -- Load the colorscheme here
       vim.cmd.colorscheme 'rose-pine'
@@ -815,6 +837,34 @@ require('lazy').setup {
       ---@diagnostic disable-next-line: duplicate-set-field
       statusline.section_location = function()
         return '%2l:%-2v'
+      end
+
+      statusline.section_mode = function()
+        local CTRL_S = vim.api.nvim_replace_termcodes('<C-S>', true, true, true)
+        local CTRL_V = vim.api.nvim_replace_termcodes('<C-V>', true, true, true)
+        local modes = setmetatable({
+          ['n'] = { long = 'Normal', short = 'N', hl = 'MiniStatuslineModeNormal' },
+          ['v'] = { long = 'Visual', short = 'V', hl = 'MiniStatuslineModeVisual' },
+          ['V'] = { long = 'V-Line', short = 'V-L', hl = 'MiniStatuslineModeVisual' },
+          [CTRL_V] = { long = 'V-Block', short = 'V-B', hl = 'MiniStatuslineModeVisual' },
+          ['s'] = { long = 'Select', short = 'S', hl = 'MiniStatuslineModeVisual' },
+          ['S'] = { long = 'S-Line', short = 'S-L', hl = 'MiniStatuslineModeVisual' },
+          [CTRL_S] = { long = 'S-Block', short = 'S-B', hl = 'MiniStatuslineModeVisual' },
+          ['i'] = { long = 'Insert', short = 'I', hl = 'MiniStatuslineModeInsert' },
+          ['R'] = { long = 'Replace', short = 'R', hl = 'MiniStatuslineModeReplace' },
+          ['c'] = { long = 'Command', short = 'C', hl = 'MiniStatuslineModeCommand' },
+          ['r'] = { long = 'Prompt', short = 'P', hl = 'MiniStatuslineModeOther' },
+          ['!'] = { long = 'Shell', short = 'Sh', hl = 'MiniStatuslineModeOther' },
+          ['t'] = { long = 'Terminal', short = 'T', hl = 'MiniStatuslineModeOther' },
+        }, {
+          -- By default return 'Unknown' but this shouldn't be needed
+          __index = function()
+            return { long = 'Unknown', short = 'U', hl = '%#MiniStatuslineModeOther#' }
+          end,
+        })
+        local mode_info = modes[vim.fn.mode()]
+
+        return mode_info.short, mode_info.hl
       end
 
       ---@diagnostic disable-next-line: duplicate-set-field
