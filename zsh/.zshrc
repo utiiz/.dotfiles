@@ -13,7 +13,7 @@ alias vim="nvim"
 alias gs="git switch"
 alias gsd="git switch dev"
 alias gse="git switch eraser-$1"
-alias ll="exa -a -l --icons --octal-permissions --header --group-directories-first"
+alias ll="exa -a -l --icons --octal-permissions --header --group-directories-first --color=always"
 alias xclip="clip.exe"
 
 # Add key bindings

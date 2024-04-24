@@ -4,6 +4,14 @@
 -- See the kickstart.nvim README for more information
 return {
   {
+    'iamcco/markdown-preview.nvim',
+    cmd = { 'MarkdownPreviewToggle', 'MarkdownPreview', 'MarkdownPreviewStop' },
+    ft = { 'markdown' },
+    build = function()
+      vim.fn['mkdp#util#install']()
+    end,
+  },
+  {
     'f-person/git-blame.nvim',
     config = function()
       vim.g.gitblame_date_format = '%d/%m/%Y'

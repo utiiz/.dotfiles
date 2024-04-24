@@ -418,6 +418,13 @@ require('lazy').setup {
             require('telescope.themes').get_dropdown(),
           },
         },
+        defaults = {
+          prompt_prefix = ' ',
+          file_ignore_patterns = {
+            'node_modules',
+            '.git',
+          },
+        },
       }
 
       -- Enable telescope extensions, if they are installed
