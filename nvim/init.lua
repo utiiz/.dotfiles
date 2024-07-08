@@ -106,6 +106,9 @@ vim.opt.relativenumber = true
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = ''
 
+-- No wrap
+vim.opt.wrap = false
+
 -- Don't show the mode, since it's already in status line
 vim.opt.showmode = false
 
@@ -165,6 +168,7 @@ vim.opt.expandtab = true
 
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true
+vim.keymap.set('x', 'p', [["_dP]])
 vim.keymap.set('i', '<C-c>', '<Esc>')
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 vim.keymap.set('n', '<Esc>', function()
@@ -659,6 +663,7 @@ require('lazy').setup {
       -- for you, so that they are available from within Neovim.
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
+        'js-debug-adapter',
         'stylua', -- Used to format lua code
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
@@ -680,22 +685,25 @@ require('lazy').setup {
 
   { -- Autoformat
     'stevearc/conform.nvim',
-    opts = {
-      notify_on_error = false,
-      format_on_save = {
-        timeout_ms = 500,
-        lsp_fallback = true,
-      },
-      formatters_by_ft = {
-        lua = { 'stylua' },
-        -- Conform can also run multiple formatters sequentially
-        -- python = { "isort", "black" },
-        --
-        -- You can use a sub-list to tell conform to run *until* a formatter
-        -- is found.
-        -- javascript = { { "prettierd", "prettier" } },
-      },
-    },
+    config = function()
+      require('conform').setup {
+        notify_on_error = false,
+        format_on_save = {
+          timeout_ms = 500,
+          lsp_fallback = true,
+        },
+        formatters_by_ft = {
+          lua = { 'stylua' },
+          -- Conform can also run multiple formatters sequentially
+          -- python = { "isort", "black" },
+          --
+          -- You can use a sub-list to tell conform to run *until* a formatter
+          -- is found.
+          javascript = { { 'prettierd', 'prettier' } },
+          typescript = { { 'prettierd', 'prettier' } },
+        },
+      }
+    end,
   },
 
   { -- Autocompletion
@@ -875,10 +883,10 @@ require('lazy').setup {
       end
 
       ---@diagnostic disable-next-line: duplicate-set-field
-      statusline.section_fileinfo = function()
-        local git_blame = require 'gitblame'
-        return git_blame.get_current_blame_text()
-      end
+      -- statusline.section_fileinfo = function()
+      -- local git_blame = require 'gitblame'
+      -- return git_blame.get_current_blame_text()
+      -- end
 
       vim.cmd.hi 'MiniStatuslineModeNormal guibg=#9CCFD8 guifg=#26233A'
       vim.cmd.hi 'MiniStatuslineModeInsert guibg=#F6C177 guifg=#26233A'
