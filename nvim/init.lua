@@ -170,6 +170,7 @@ vim.opt.expandtab = true
 vim.opt.hlsearch = true
 vim.keymap.set('x', 'p', [["_dP]])
 vim.keymap.set('i', '<C-c>', '<Esc>')
+vim.keymap.set('i', 'jj', '<Esc>')
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 vim.keymap.set('n', '<Esc>', function()
   vim.cmd 'nohlsearch'
@@ -362,7 +363,7 @@ require('lazy').setup {
   { -- Fuzzy Finder (files, lsp, etc)
     'nvim-telescope/telescope.nvim',
     event = 'VimEnter',
-    branch = '0.1.x',
+    branch = 'master',
     dependencies = {
       'nvim-lua/plenary.nvim',
       { -- If encountering errors, see telescope-fzf-native README for install instructions
@@ -416,13 +417,27 @@ require('lazy').setup {
         --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
         --   },
         -- },
-        -- pickers = {}
+        pickers = {
+          live_grep = {
+            hidden = true, -- This should allow live_grep to include hidden files as well
+            find_command = { 'rg', '--hidden', '--glob', '!.git/*' }, -- Custom find command for excluding .git folder
+          },
+          find_files = {
+            hidden = true, -- This should allow find_files to include hidden files as well
+            find_command = { 'rg', '--files', '--hidden', '--glob', '!.git/*' }, -- Custom find command for excluding .git folder
+          },
+        },
         extensions = {
           ['ui-select'] = {
             require('telescope.themes').get_dropdown(),
           },
         },
         defaults = {
+          path_display = {
+            filename_first = {
+              reverse_directories = false,
+            },
+          },
           prompt_prefix = ' ',
           file_ignore_patterns = {
             'node_modules',

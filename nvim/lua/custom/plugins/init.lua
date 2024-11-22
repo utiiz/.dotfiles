@@ -4,6 +4,69 @@
 -- See the kickstart.nvim README for more information
 return {
   {
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+    },
+    dir = '~/lab/gitlab-review.nvim',
+    name = 'gitlab-review',
+    dev = { true },
+    config = function()
+      local gitlab = require 'gitlab-review'
+      gitlab.setup()
+
+      vim.keymap.set('n', '<leader>gcr', gitlab.get_current_repo, { desc = '[G]et [C]urrent [R]epo' })
+    end,
+  },
+  {
+    'harrisoncramer/gitlab.nvim',
+    dependencies = {
+      'MunifTanjim/nui.nvim',
+      'nvim-lua/plenary.nvim',
+      'sindrets/diffview.nvim',
+      'stevearc/dressing.nvim', -- Recommended but not required. Better UI for pickers.
+      'nvim-tree/nvim-web-devicons', -- Recommended but not required. Icons in discussion tree.
+    },
+    enabled = true,
+    build = function()
+      require('gitlab.server').build(true)
+    end, -- Builds the Go binary
+    config = function()
+      local gitlab = require 'gitlab'
+      gitlab.setup()
+
+      vim.keymap.set('n', '<leader>gmr', gitlab.choose_merge_request, { desc = '[G]itlab Choose [M]erge [R]equest' })
+      vim.keymap.set('n', '<leader>gp', gitlab.pipeline, { desc = '[G]itlab [P]ipeline' })
+    end,
+  },
+  {
+    'nvim-neotest/neotest',
+    dependencies = {
+      'nvim-neotest/nvim-nio',
+      'nvim-lua/plenary.nvim',
+      'antoinemadec/FixCursorHold.nvim',
+      'nvim-treesitter/nvim-treesitter',
+      'nvim-neotest/neotest-jest',
+    },
+    config = function()
+      local neo = require 'neotest'
+      neo.setup {
+        adapters = {
+          require 'neotest-jest' {
+            jestCommand = 'npm test --',
+            env = { CI = true },
+            cwd = function(path)
+              return vim.fn.getcwd()
+            end,
+          },
+        },
+      }
+
+      vim.keymap.set('n', '<leader>tr', neo.run.run)
+      -- vim.keymap.set('n', '<leader>to', neo.output_panel.open())
+      vim.keymap.set('n', '<leader>ts', neo.summary.open)
+    end,
+  },
+  {
     'stevearc/oil.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     config = function()
